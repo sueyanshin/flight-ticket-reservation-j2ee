@@ -9,6 +9,7 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  
   <servlet>
     <servlet-name>AdminLogin</servlet-name>
     <servlet-class>com.admin.AdminLogin</servlet-class>
@@ -18,5 +19,13 @@
     <url-pattern>/admin/AdminLogin</url-pattern>
   </servlet-mapping>
   
-  
+  <servlet>
+    <servlet-name>AdminLogout</servlet-name>
+    <servlet-class>com.admin.AdminLogout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminLogin</servlet-name>
+    <url-pattern>/admin/AdminLogout</url-pattern>
+  </servlet-mapping>
+ 
 </web-app>

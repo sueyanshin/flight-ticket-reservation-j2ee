@@ -1,4 +1,4 @@
-package com.user.servlet;
+package com.user;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -21,7 +21,7 @@ public class SearchFlight extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String source = req.getParameter("source");
-        String destination = req.getParameter("destination"); // Corrected typo here
+        String destination = req.getParameter("destination");
         LocalDate departureDate = LocalDate.parse(req.getParameter("departureDate"));
 
         FlightDao flightdao = new FlightDao(DBConnect.getConn());

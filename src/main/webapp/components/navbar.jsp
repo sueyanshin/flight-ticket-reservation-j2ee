@@ -13,9 +13,7 @@
 			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
 				<c:if test="${ empty userObj}">
-					<li class="nav-item mx-2"><a
-						class="nav-link" aria-current="page"
-						href="index.jsp">Home</a></li>
+					<li class="nav-item mx-2"><a class="nav-link" href="index.jsp">Home</a></li>
 					<li class="nav-item mx-2"><a class="nav-link"
 						href="flights.jsp">Flights</a></li>
 					<li class="nav-item mx-2"><a class="nav-link"
@@ -31,22 +29,15 @@
 
 				<!-- if user is logined -->
 				<c:if test="${not empty userObj}">
-					<li class="nav-item mx-2"><a
-						class="nav-link text-warning active" aria-current="page"
+					<li class="nav-item mx-2"><a class="nav-link "
 						href="index.jsp">Home</a></li>
 
 					<li class="nav-item mx-2"><a class="nav-link"
 						href="flights.jsp">Flights</a></li>
 
 					<li class="nav-item mx-2"><a class="nav-link"
-						href="flights.jsp">MY Reservations</a></li>
-					<!-- 
-					<li class="nav-item dropdown "><button
-						class="nav-link dropdown-toggle" type ="button" role="button"
-						data-bs-toggle="dropdown" aria-expanded="false"> <i
-							class="fa-solid fa-user"></i> ${userObj.name}
-					</button>
- -->
+						href="my_reservations.jsp">My Reservations</a></li>
+
 
 					<li class="dropdown">
 						<button class="btn btn-outline-warning dropdown-toggle text-dark"
@@ -56,7 +47,6 @@
 						</button>
 
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#">Change Password</a></li>
 							<li><a class="dropdown-item" href="UserLogout">Logout</a></li>
 						</ul>
 					</li>
@@ -78,11 +68,12 @@
 				link.classList.add('text-warning');
 
 			}
-			else{
-		        var indexLink = document.querySelector('a[href="index.jsp"]');
-				indexLink.classList.add('active');
-				indexLink.classList.add('text-warning');
-			}
+
+			//else{
+			//  var indexLink = document.querySelector('a[href="index.jsp"]');
+			//indexLink.classList.add('active');
+			//indexLink.classList.add('text-warning');
+			//			}
 		})
 
 	});

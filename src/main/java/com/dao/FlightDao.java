@@ -161,7 +161,7 @@ public class FlightDao {
 
 			while (rs.next()) {
 				flight = new Flight();
-				flight.setId(1);
+				flight.setId(rs.getInt(1));
 				flight.setSource(rs.getString(2));
 				flight.setDestination(rs.getString(3));
 				flight.setStatus(rs.getString(4));

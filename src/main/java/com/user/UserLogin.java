@@ -1,4 +1,4 @@
-package com.user.servlet;
+package com.user;
 
 import java.io.IOException;
 
@@ -13,33 +13,35 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/user_register")
-public class UserRegister extends HttpServlet {
+@WebServlet("/UserLogin")
+public class UserLogin extends HttpServlet{
+
+	private static final long serialVersionUID = 1L;
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
-			String name=req.getParameter("name");
-			String email=req.getParameter("email");
-			String password=req.getParameter("password");
+
+			String email = req.getParameter("email");
+			String password = req.getParameter("password");
 			
-			User u=new User(name,email,password);
+			HttpSession session= req.getSession();
 			
 			UserDao dao=new UserDao(DBConnect.getConn());
-			
-			HttpSession session=req.getSession();			
-			boolean f= dao.register(u);
-			if(f) {
-				session.setAttribute("succMsg", "Registered Successfully.");
-				resp.sendRedirect("signup.jsp");
+			User user=dao.login(email, password);
+
+			if (user!=null) {
+				session.setAttribute("userObj", user);
+				resp.sendRedirect("index.jsp");
 			}else {
-				session.setAttribute("errorMsg", "Something went wrong on server.");
-				resp.sendRedirect("signup.jsp");
+				session.setAttribute("errorMsg", "Invalid email & password.");
+				resp.sendRedirect("login.jsp");
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	
 	}
-		
+	
 }
