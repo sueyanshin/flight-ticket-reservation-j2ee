@@ -37,7 +37,7 @@
 						<div class="fs-4 text-center text-success" role="alert">${succMsg}</div>
 						<c:remove var="succMsg" scope="session" />
 					</c:if>
-			
+
 
 					<table class="table">
 						<thead>
@@ -80,16 +80,15 @@
 								<td><%=f.getEcoPrice()%>ks</td>
 								<td><%=f.getBusinessPrice()%>ks</td>
 
-								<td><c:if test="${not empty userObj} ">
-										<!-- 
-										<a href="reservation.jsp?id=<%=f.getId()%>"
-								 -->
-										<a href="#" class="btn btn-sm btn-warning me-2"> Book Now
-										</a>
-									</c:if> <c:if test="${empty userObj }">
-										<a href="login.jsp" class="btn btn-sm btn-warning">Login
-											to book</a>
-									</c:if></td>
+								<td><c:choose>
+										<c:when test="${empty userObj}">
+											<a href="login.jsp" class="btn btn-sm btn-warning">Login
+												to book</a>
+										</c:when>
+										<c:otherwise>
+											<a href="bookNow.jsp?id=<%=f.getId()  %>" class="btn btn-sm btn-warning me-2">Book Now</a>
+										</c:otherwise>
+									</c:choose></td>
 
 							</tr>
 							<%
