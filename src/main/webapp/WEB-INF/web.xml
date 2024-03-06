@@ -10,6 +10,7 @@
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
   
+  <!-- Admin -->
   <servlet>
     <servlet-name>AdminLogin</servlet-name>
     <servlet-class>com.admin.AdminLogin</servlet-class>
@@ -28,4 +29,6 @@
     <url-pattern>/admin/AdminLogout</url-pattern>
   </servlet-mapping>
  
+ 
+   <!-- User -->
 </web-app>

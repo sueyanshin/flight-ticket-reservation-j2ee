@@ -17,9 +17,7 @@
 					<li class="nav-item mx-2"><a class="nav-link"
 						href="flights.jsp">Flights</a></li>
 					<li class="nav-item mx-2"><a class="nav-link"
-						href="contact_us.jsp">Contact</a></li>
-					<li class="nav-item mx-2"><a class="nav-link"
-						href="about_us.jsp">About</a></li>
+						href="about_us.jsp">About us</a></li>
 
 					<li class="nav-item"><a class="btn btn-warning"
 						href="login.jsp"> <i class="fa-solid fa-right-to-bracket"></i>
