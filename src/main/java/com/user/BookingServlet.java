@@ -40,7 +40,7 @@ public class BookingServlet extends HttpServlet {
 		
 		if(dao.bookAFlight(book)) {
 			session.setAttribute("succMsg", "Booking successful.");
-			resp.sendRedirect("MyBookings.jsp");
+			resp.sendRedirect("my_bookings.jsp");
 		}else {
 			session.setAttribute("errorMsg", "Something went wrong on server.");
 			resp.sendRedirect("MyBooking.jsp");

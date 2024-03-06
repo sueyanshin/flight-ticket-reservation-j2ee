@@ -34,7 +34,7 @@
 						href="flights.jsp">Flights</a></li>
 
 					<li class="nav-item mx-2"><a class="nav-link"
-						href="my_reservations.jsp">My Reservations</a></li>
+						href="my_bookings.jsp">My Bookings</a></li>
 
 
 					<li class="dropdown">

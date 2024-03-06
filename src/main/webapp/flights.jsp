@@ -21,10 +21,6 @@
 <body>
 	<%@include file="components/navbar.jsp"%>
 
-	<c:if test="${empty userObj} ">
-		<c:redirect url="login.jsp"></c:redirect>
-	</c:if>
-
 	<div class="row ">
 		<div class="col-md-12 mx-auto">
 
@@ -41,6 +37,7 @@
 						<div class="fs-4 text-center text-success" role="alert">${succMsg}</div>
 						<c:remove var="succMsg" scope="session" />
 					</c:if>
+			
 
 					<table class="table">
 						<thead>
@@ -81,11 +78,14 @@
 								<td><%=f.getStatus()%></td>
 
 								<td><%=f.getEcoPrice()%>ks</td>
-								<td><%=f.getBusinessPrice()%></td>
+								<td><%=f.getBusinessPrice()%>ks</td>
 
 								<td><c:if test="${not empty userObj} ">
+										<!-- 
 										<a href="reservation.jsp?id=<%=f.getId()%>"
-											class="btn btn-sm btn-warning me-2"> Book Now </a>
+								 -->
+										<a href="#" class="btn btn-sm btn-warning me-2"> Book Now
+										</a>
 									</c:if> <c:if test="${empty userObj }">
 										<a href="login.jsp" class="btn btn-sm btn-warning">Login
 											to book</a>

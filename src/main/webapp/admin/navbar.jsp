@@ -19,9 +19,11 @@
 				<li class="nav-item mx-2"><a class="nav-link"
 					href="flights.jsp">Flights</a></li>
 				<li class="nav-item mx-2"><a class="nav-link"
-					href="reservations.jsp">Reservations</a></li>
-				<li class="nav-item mx-2"><a class="nav-link"
 					href="add_flight.jsp">Add Flight</a></li>
+						<li class="nav-item mx-2"><a class="nav-link"
+					href="users.jsp">Users</a></li>
+				<li class="nav-item mx-2"><a class="nav-link"
+					href="bookings.jsp">Bookings</a></li>
 			</ul>
 
 			<form class="d-flex">

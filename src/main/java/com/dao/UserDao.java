@@ -1,9 +1,16 @@
 package com.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.entity.Flight;
 import com.entity.User;
 
 public class UserDao {
@@ -48,6 +55,7 @@ public class UserDao {
 				u.setName(rs.getString(2));
 				u.setEmail(rs.getString(3));
 				u.setPassword(rs.getString(4));
+				System.out.println("USER ID"+u.getId());
 			}
 			
 		} catch (Exception e) {
@@ -71,6 +79,30 @@ public class UserDao {
 		}
 		
 		return count;
+	}
+	
+	public List<User> getAllUsers() {
+		List<User> list = new ArrayList<User>();
+		User user = null;
+		try {
+
+			String sql = "select * from users order by id desc";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				user = new User();
+				user.setId(rs.getInt(1));
+				user.setName(rs.getString(2));
+				user.setEmail(rs.getString(3));
+
+				list.add(user);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
 	}
 
 }

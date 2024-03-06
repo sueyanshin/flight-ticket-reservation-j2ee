@@ -1,3 +1,5 @@
+<%@page import="com.dao.BookingDao"%>
+<%@page import="com.entity.Booking"%>
 <%@page import="com.dao.UserDao"%>
 <%@page import="com.dao.FlightDao"%>
 <%@page import="com.entity.City"%>
@@ -37,20 +39,62 @@
 
 
 		<div class="row">
-			<div class="col-md-6">
+		
+
+	<div class="col-md-6 ">
+				<div class="card shadow">
+					<div class="card-body text-center text-dark">
+						<i class="fas fa-user-circle fa-3x text-warning"></i><br>
+						<p class="fs-4 text-center my-3">
+							Users <br>
+							<%=userDao.getUserCount()%>
+						</p>
+						<button type="button" class="btn btn-warning">
+								<a href="users.jsp" class="text-decoration-none text-dark">View</a>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-6 ">
+				<div class="card shadow">
+					<div class="card-body text-center text-dark">
+						<i class="far fa-calendar-check fa-3x text-warning"></i><br>
+						<p class="fs-4 text-center my-3">
+						
+							<%
+							BookingDao dao = new BookingDao(DBConnect.getConn());
+							int bookingCount = dao.getBookingCount();
+							%>
+							Bookings <br>
+							<%=bookingCount%>
+						
+						</p>
+						<button type="button" class="btn btn-warning">
+						<a href="bookings.jsp" class="text-decoration-none text-dark">View</a>
+						</button>
+
+					</div>
+				</div>
+			</div>
+		
+		
+			<div class="col-md-6 mt-3">
 				<div class="card shadow ">
 					<div class="card-body text-center text-dark">
 						<i class="fa-solid fa-plane fa-3x text-warning"></i> <br>
 						<p class="fs-4 text-center my-3">
 
 							<%
-							FlightDao dao = new FlightDao(DBConnect.getConn());
-							int flightCount = dao.getFlightCount();
+							FlightDao flightDao = new FlightDao(DBConnect.getConn());
+							int flightCount = flightDao.getFlightCount();
 							%>
 							Flights <br>
 							<%=flightCount%>
 						</p>
-						<button type="button" class="btn btn-warning">View</button>
+						<button type="button" class="btn btn-warning">
+					<a href="flights.jsp" class="text-decoration-none text-dark">View</a>
+						</button>
 						<button type="button" class="btn btn-outline-warning">
 							<a href="add_flight.jsp" class="text-decoration-none text-dark">Add</a>
 						</button>
@@ -64,35 +108,7 @@
 
 
 
-			<div class="col-md-6 ">
-				<div class="card shadow">
-					<div class="card-body text-center text-dark">
-						<i class="fas fa-user-circle fa-3x text-warning"></i><br>
-						<p class="fs-4 text-center my-3">
-							Users <br>
-							<%=userDao.getUserCount()%>
-						</p>
-						<button type="button" class="btn btn-warning">View</button>
-						<button type="button" class="btn btn-outline-warning">Add</button>
-
-
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-6  mt-3">
-				<div class="card shadow">
-					<div class="card-body text-center text-dark">
-						<i class="far fa-calendar-check fa-3x text-warning"></i><br>
-						<p class="fs-4 text-center my-3">
-							Reservations <br> 234
-						</p>
-						<button type="button" class="btn btn-warning">View</button>
-						<button type="button" class="btn btn-outline-warning">Add</button>
-
-					</div>
-				</div>
-			</div>
+		
 
 			<div class="col-md-6  mt-3">
 				<div class="card shadow ">
@@ -115,6 +131,12 @@
 
 		</div>
 	</div>
+
+
+
+
+
+
 
 	<!-- Add City Modal -->
 	<div class="modal fade" id="addCityModal" tabindex="-1"
