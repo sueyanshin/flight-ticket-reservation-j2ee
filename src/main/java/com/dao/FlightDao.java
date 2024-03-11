@@ -138,6 +138,7 @@ public class FlightDao {
 
 				flight.setEcoSeats(rs.getInt(9));
 				flight.setBusinessSeats(rs.getInt(10));
+				System.out.println("Flight called"+flight.getSource());
 			}
 
 		} catch (Exception e) {

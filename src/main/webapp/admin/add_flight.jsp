@@ -66,19 +66,7 @@
 								<div class="form-floating mb-4 col-md-6">
 									<select class="form-select" id="floatingSelect"
 										name="destination" aria-label="Choose destination">
-										<!-- 
-									<option value="7">Lashio</option>
-									<option value="8">Myeik</option>
-									<option value="9">Myitkyina</option>
-									<option value="10">Mandalay</option>
-									<option value="11">Nyaung U</option>
-									<option value="12">Putao</option>
-									<option value="13">Sittwe</option>
-									<option value="14">Tachileik</option>
-									<option value="15">Thandwe</option>
-									
-			 -->
-										<option selected disabled>--To--</option>
+											<option selected disabled>--To--</option>
 
 										<%
 										for (City c : list) {

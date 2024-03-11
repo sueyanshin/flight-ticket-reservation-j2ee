@@ -201,7 +201,7 @@ Show flight card if user search flight exist
 										</div>
 
 										<div class="col-md-4 text-center">
-											<h5 class="card-title">Time</h5>
+											<h5 class="card-title">Departure Time</h5>
 											<input type="text" class="form-control" name="time"
 												value="${flight.getDepartureTime()}" readonly>
 										</div>
@@ -262,7 +262,7 @@ Show flight card if user search flight exist
 										</div>
 									</div>
 
-
+<!-- 
 									<div
 										class="row d-flex justify-content-between align-items-start">
 										<div class="col-md-6 text-start">
@@ -277,6 +277,7 @@ Show flight card if user search flight exist
 											<img alt="Scan me" src="./images/scan.png">
 										</div>
 									</div>
+ -->
 
 									<div class="row justify-content-center mt-4">
 										<div class="col-md-8 my-4 text-center">

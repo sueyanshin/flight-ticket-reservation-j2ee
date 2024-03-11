@@ -38,19 +38,30 @@
 		<p class="fs-5 text-center text-warning">Thank you for using our
 			service.</p>
 
+		<c:if test="${not empty errorMsg}">
+			<p class="fs-5 text-center text-danger">${errorMsg}</p>
+			<c:remove var="errorMsg" scope="session" />
+		</c:if>
+		<c:if test="${not empty succMsg}">
+			<div class="fs-5 text-center text-success" role="alert">${succMsg}</div>
+			<c:remove var="succMsg" scope="session" />
+		</c:if>
+
+
 
 		<%
 		User user = (User) session.getAttribute("userObj");
 		BookingDao dao = new BookingDao(DBConnect.getConn());
 		List<Booking> list = dao.getAllBookings(user.getId());
 		for (Booking book : list) {
-			if(list.isEmpty() || list ==null){%>
-			
-			<h3 class="text-center text-secondary">You don't have any booking.</h3>
-			
-			<% 
-				
-			}else{
+			if (list.isEmpty() || list == null) {
+		%>
+
+		<h3 class="text-center text-secondary">You don't have any
+			booking.</h3>
+
+		<%
+		} else {
 		%>
 
 		<div class="row shadow p-4 m-3  rounded">
@@ -74,7 +85,8 @@
 
 			<div class="col-md-2">
 				<h3 class="text-secondary">Price</h3>
-				<p><%=book.getTotalPrice() %>ks</p>
+				<p><%=book.getTotalPrice()%>ks
+				</p>
 
 			</div>
 
@@ -98,7 +110,8 @@
 				<p class="bg-warning p-1 rounded text-center">
 					<i class="fa-regular fa-clock"></i> Pending
 				</p>
-				<a href="cancelFlight?id=<%=book.getId() %>" class="btn btn-danger w-100"> Cancel Flight </a>
+				<a href="cancelFlight?id=<%=book.getId()%>"
+					class="btn btn-danger w-100"> Cancel Flight </a>
 
 				<%
 				} else {
@@ -116,7 +129,8 @@
 
 		</div>
 		<%
-		}}
+		}
+		}
 		%>
 
 

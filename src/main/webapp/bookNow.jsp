@@ -48,7 +48,7 @@
 							<input type="hidden" name="userId" value="${userObj.id }">
 							<input type="hidden" name="name" value="${userObj.name }">
 							<input type="hidden" name="email" value="${userObj.email }">
-							<input type="hidden" name="flightId" value="${flight.id }">
+							<input type="hidden" name="flightId" value="<%=flight.getId()%>">
 
 
 							<!-- ROW 1 -->
@@ -56,7 +56,7 @@
 
 								<div class="col-md-4 text-start">
 									<input type="text" class="form-control" name="source"
-										value="${flight.getSource()}" readonly>
+										value="<%=flight.getSource() %>" readonly>
 									<p class="text-secondary">source</p>
 								</div>
 
@@ -67,7 +67,7 @@
 
 								<div class="col-md-4 text-end">
 									<input type="text" class="form-control" name="destination"
-										value="${flight.getDestination()}" readonly>
+										value="<%=flight.getDestination()%>" readonly>
 									<p class="text-secondary">destination</p>
 								</div>
 
@@ -81,13 +81,13 @@
 								<div class="col-md-4 text-start">
 									<h5 class="card-title">Departure Date</h5>
 									<input type="text" class="form-control" name="date"
-										value="${flight.getDepartureDate()}" readonly>
+										value="<%=flight.getDepartureDate()%>" readonly>
 								</div>
 
 								<div class="col-md-4 text-center">
 									<h5 class="card-title">Time</h5>
 									<input type="text" class="form-control" name="time"
-										value="${flight.getDepartureTime()}" readonly>
+										value="<%=flight.getDepartureTime() %>" readonly>
 								</div>
 
 
@@ -96,16 +96,16 @@
 									<div class="form-check">
 										<input class="form-check-input" type="radio"
 											name="priceOption" id="businessPrice"
-											value="${flight.getBusinessPrice()}"> <label
+											value="<%=flight.getBusinessPrice() %>"> <label
 											class="form-check-label" for="businessPrice">Business:
-											${flight.getBusinessPrice()} ks</label>
+											<%=flight.getBusinessPrice() %> ks</label>
 									</div>
 									<div class="form-check">
 										<input class="form-check-input" type="radio"
 											name="priceOption" id="ecoPrice"
-											value="${flight.getEcoPrice()}" checked> <label
+											value="<%=flight.getEcoPrice() %>" checked> <label
 											class="form-check-label" for="ecoPrice">Economy:
-											${flight.getEcoPrice()} ks</label>
+											<%=flight.getEcoPrice()%> ks</label>
 									</div>
 								</div>
 
@@ -141,7 +141,7 @@
 								</div>
 							</div>
 
-
+<!-- 
 							<div class="row d-flex justify-content-between align-items-start">
 								<div class="col-md-6 text-start">
 									<h5 class="card-title pt-5">Payment Screenshot</h5>
@@ -154,6 +154,7 @@
 									<img alt="Scan me" src="./images/scan.png">
 								</div>
 							</div>
+ -->
 
 							<div class="row justify-content-center mt-4">
 								<div class="col-md-8 my-4 text-center">

@@ -86,7 +86,7 @@ public class BookingDao {
 		Booking book = null;
 		try {
 
-			String sql = "select * from booking where user_id=?";
+			String sql = "select * from booking where user_id=?  order by id desc";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, userId);
 			ResultSet rs = ps.executeQuery();

@@ -80,13 +80,18 @@
 								<td><%=f.getEcoPrice()%>ks</td>
 								<td><%=f.getBusinessPrice()%>ks</td>
 
-								<td><c:choose>
+								<td><c:set var="isLanded" value="<%=f.getStatus()%>" /> <c:choose>
 										<c:when test="${empty userObj}">
 											<a href="login.jsp" class="btn btn-sm btn-warning">Login
 												to book</a>
 										</c:when>
+										<c:when test="${isLanded.equalsIgnoreCase('Landed')}">
+											<a href="" class="btn btn-sm btn-secondary disabled"
+												style="cursor: none;">Stay tune</a>
+										</c:when>
 										<c:otherwise>
-											<a href="bookNow.jsp?id=<%=f.getId()  %>" class="btn btn-sm btn-warning me-2">Book Now</a>
+											<a href="bookNow.jsp?id=<%=f.getId()%>"
+												class="btn btn-sm btn-warning me-2">Book Now</a>
 										</c:otherwise>
 									</c:choose></td>
 
