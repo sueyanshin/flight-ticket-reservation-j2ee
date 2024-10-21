@@ -22,7 +22,7 @@ This is my Comp Sci second year J2EE project. The **Airline Reservation System**
 ## Admin Login Credentials
 - Email: admin@gmail.com
 - Password: admin
-- 
+
 ## Project Screenshots
 
 ![1](https://github.com/user-attachments/assets/36746007-17db-4dd4-9e72-924162991795)
